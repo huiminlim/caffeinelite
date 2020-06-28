@@ -10,7 +10,7 @@ window.geometry('170x100')
 
 count = 0
 current_id = 0
-period = 3000  # ms
+period = 49000  # ms
 
 lbl = Label(window, text="Caffeine Lite")
 # lbl1 = Label(window, text="Duration: " + str(period/1000) + " sec")
@@ -28,7 +28,7 @@ def task():
     global current_id
     keyboard.press(Key.f15)
     keyboard.release(Key.f15)
-    current_id = window.after(1000, task)
+    current_id = window.after(period, task) # After fixed period
     count += 1
     lbl3.configure(text="F20 button was clicked !!")
     lbl2.configure(text="Count: " + str(count))
